@@ -26,3 +26,21 @@ python3 -u -m esptool --port /dev/ttyUSB0 --chip esp32 --baud 115200 write-flash
 
 sudo apt install rp-bookshelf 
 
+
+https://forums.raspberrypi.com/viewtopic.php?t=373028
+
+sudo apt update && sudo apt install --ignore-missing -y \
+  gnome-core \
+  yaru-theme-{gnome-shell,gtk,icon,sound,unity} \
+  fonts-ubuntu fonts-ubuntu-{title,console} ttf-mscorefonts-installer \
+  rpi-chromium-mods chromium chromium-common chromium-driver chromium-l10n gnome-browser-connector \
+  rhythmbox rhythmbox-plugins rhythmbox-plugin-alternative-toolbar \
+  gstreamer1.0-plugins-{base,good,bad,ugly} gstreamer1.0-{libav,tools,alsa,pulseaudio,x,gl,vaapi,pipewire} libwidevinecdm0 \
+  libreoffice-{writer,calc,impress,gtk3,gnome} \
+  gnome-text-editor simple-scan hplip file-roller \
+  network-manager-openvpn-gnome \
+  gnome-tweaks gnome-calendar gnome-weather \
+  plymouth plymouth-themes gnome-shell-extension-dashtodock gnome-shell-extension-desktop-icons-ng gnome-shell-extensions \
+  dbus-x11 || true && \
+sudo systemctl set-default graphical.target && \
+sudo reboot 
