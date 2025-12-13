@@ -44,3 +44,7 @@ sudo apt update && sudo apt install --ignore-missing -y \
   dbus-x11 || true && \
 sudo systemctl set-default graphical.target && \
 sudo reboot 
+
+sudo apt install lm-sensors gnome-shell-extension-freon
+
+
