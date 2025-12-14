@@ -47,4 +47,22 @@ sudo reboot
 
 sudo apt install lm-sensors gnome-shell-extension-freon
 
+===
+
+LVGL BUILD for CYD
+
+1. build
+
+cd ~/workspace/lvgl_micropython
+
+python3 make.py esp32 BOARD=ESP32_GENERIC DISPLAY=ILI9341 INDEV=XPT2046 clean
+
+2. flash
+
+cd ~/workspace/lvgl_micropython/build
+
+cd python3 -u -m esptool --port /dev/ttyUSB0 --chip esp32 --baud 115200 write-flash --flash-mode keep --flash-size keep --erase-all 0x0 ./lvgl_micropy_ESP32_GENERIC-4.bin
+
+
+
 
