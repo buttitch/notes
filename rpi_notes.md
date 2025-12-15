@@ -63,6 +63,6 @@ cd ~/workspace/lvgl_micropython/build
 
 cd python3 -u -m esptool --port /dev/ttyUSB0 --chip esp32 --baud 115200 write-flash --flash-mode keep --flash-size keep --erase-all 0x0 ./lvgl_micropy_ESP32_GENERIC-4.bin
 
+===
 
-
-
+GitHub - lspr98/bike-computer-32: Simple open source bike computer based on an ESP32-C3. Supports OSM-offline maps, GPX-track rendering and Multi-Constellation GNSS positioning. https://share.google/EsLgX9GNUgv25chDK
