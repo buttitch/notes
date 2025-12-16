@@ -51,6 +51,8 @@ sudo apt install lm-sensors gnome-shell-extension-freon
 
 LVGL BUILD for CYD
 
+* https://github.com/lvgl-micropython/lvgl_micropython/tree/main
+
 1. build
 
 cd ~/workspace/lvgl_micropython
@@ -65,4 +67,15 @@ cd python3 -u -m esptool --port /dev/ttyUSB0 --chip esp32 --baud 115200 write-fl
 
 ===
 
-GitHub - lspr98/bike-computer-32: Simple open source bike computer based on an ESP32-C3. Supports OSM-offline maps, GPX-track rendering and Multi-Constellation GNSS positioning. https://share.google/EsLgX9GNUgv25chDK
+GitHub - lspr98/bike-computer-32: Simple open source bike computer based on an ESP32-C3. Supports OSM-offline maps, GPX-track rendering and Multi-Constellation GNSS positioning. 
+* https://share.google/EsLgX9GNUgv25chDK
+
+ECUMaster Black + ESP32 Bluetooth Display: 
+* https://github.com/danuecumaster/ECUMaster-Black-ESP32-Bluetooth-Display
+
+Temp and Humidity:
+* https://github.com/fabse-hack/temp_humidity_micropython_lvgl/tree/main#
+
+Using the CYD: All Clones are Not Created Equal! 
+* https://youtu.be/agfuTNZGGl4
+* https://resinchemtech.blogspot.com/2025/08/cyd.html
