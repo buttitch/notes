@@ -1,3 +1,5 @@
+# RPi Stuff
+
 https://www.raspberrypi.com/news/heating-and-cooling-raspberry-pi-5/
 
 watch -n 2 vcgencmd measure_temp
@@ -15,17 +17,7 @@ sudo nano /etc/lightdm/lightdm.conf
 
 sudo update-alternatives --config x-session-manager
 
-esp flash
-* venv
-* download image
-* activate venv
-* (venv) python -m pip install esptools
-* flash device
-
-python3 -u -m esptool --port /dev/ttyUSB0 --chip esp32 --baud 115200 write-flash --flash-mode keep --flash-size keep --erase-all 0x1000 ~/Downloads/ESP32_GENERIC-20251209-v1.27.0.bin
-
 sudo apt install rp-bookshelf 
-
 
 https://forums.raspberrypi.com/viewtopic.php?t=373028
 
@@ -47,9 +39,20 @@ sudo reboot
 
 sudo apt install lm-sensors gnome-shell-extension-freon
 
-===
 
-LVGL BUILD for CYD
+# Micropython esp32xx standard build flash
+
+esp flash
+* venv
+* download image
+* activate venv
+* (venv) python -m pip install esptools
+* flash device
+
+python3 -u -m esptool --port /dev/ttyUSB0 --chip esp32 --baud 115200 write-flash --flash-mode keep --flash-size keep --erase-all 0x1000 ~/Downloads/ESP32_GENERIC-20251209-v1.27.0.bin
+
+
+# LVGL custom Micropython BUILD for CYD 
 
 * https://github.com/lvgl-micropython/lvgl_micropython/tree/main
 
@@ -65,7 +68,17 @@ cd ~/workspace/lvgl_micropython/build
 
 cd python3 -u -m esptool --port /dev/ttyUSB0 --chip esp32 --baud 115200 write-flash --flash-mode keep --flash-size keep --erase-all 0x0 ./lvgl_micropy_ESP32_GENERIC-4.bin
 
-===
+
+# ulab custom Micropython build
+
+0. For the most part follow build instructions in: https://github.com/micropython/micropython/blob/master/ports/esp32/README.md 
+1. But then before final build, see: https://github.com/orgs/micropython/discussions/17225
+2. Use: ```MICROPY_ROM_TEXT_COMPRESSION OFF``` in  ```esp32_common.cmake```
+3. In micropython esp32 dir: ```make submodules``` followed by ```make USER_C_MODULES=${BUILD_DIR}/micropython-ulab/code/micropython.cmake```
+4. Should build. Then flash and test.
+
+
+# Interesting Projects/Ideas/Examples
 
 GitHub - lspr98/bike-computer-32: Simple open source bike computer based on an ESP32-C3. Supports OSM-offline maps, GPX-track rendering and Multi-Constellation GNSS positioning. 
 * https://share.google/EsLgX9GNUgv25chDK
