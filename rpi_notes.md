@@ -77,6 +77,19 @@ cd python3 -u -m esptool --port /dev/ttyUSB0 --chip esp32 --baud 115200 write-fl
 3. In micropython esp32 dir: ```make submodules``` followed by ```make USER_C_MODULES=${BUILD_DIR}/micropython-ulab/code/micropython.cmake```
 4. Should build. Then flash and test.
 
+### Example building Micropython with ulab for the esp32s3 with SPIRAM
+1. ```cd ${BUILD_DIR}/esp-idf```
+2. ```install.sh``` then ```source export.sh```
+3. ```cd ${BUILD_DIR}/micropython```
+4. ```make -C mpy-cross```
+5. ```cd ports/esp32```
+6. Edit ```esp32_common.cmake``` setting ```MICROPY_ROM_TEXT_COMPRESSION OFF``` 
+7. make submodules: ```make BOARD=ESP32_GENERIC_S3 BOARD_VARIANT=SPIRAM_OCT submodules```
+8. make: ```make BOARD=ESP32_GENERIC_S3 BOARD_VARIANT=SPIRAM_OCT USER_C_MODULES=${BUILD_DIR}/micropython-ulab/code/micropython.cmake```
+9. wait... ```crunch crunch crunch```... ```build build build```... done!
+10. flash: ```python -m esptool --chip esp32s3 -b 460800 --before default_reset --after hard_reset write_flash --flash_mode dio --flash_size 4MB --flash_freq 80m 0x0 build-ESP32_GENERIC_S3-SPIRAM_OCT/bootloader/bootloader.bin 0x8000 build-ESP32_GENERIC_S3-SPIRAM_OCT/partition_table/partition-table.bin 0x10000 build-ESP32_GENERIC_S3-SPIRAM_OCT/micropython.bin```
+11. enjoy
+
 
 # Interesting Projects/Ideas/Examples
 
