@@ -96,5 +96,8 @@ Using the CYD: All Clones are Not Created Equal!
 Detailed CYD tutorial:
 * https://docs.freenove.com/projects/fnk0103/en/latest/fnk0103/codes/tutorial.html
 * https://github.com/Freenove/Freenove_ESP32_Display
+  
+esp32 streaming display:
 * https://github.com/Freenove/Freenove_ESP32_Display/blob/main/Main_Tutorial.pdf
 * Cheap Black Display (esp32-S3): https://www.amazon.com.au/Freenove-Supporting-XiaoZhiAI-Dual-core-Microcontroller/dp/B0FSQF6FKN/ref=sr_1_45?sr=8-45
+* tuckershannon/ESP32-Desktop-Monitor https://share.google/4mGBPtKFK0VUNKA4O
