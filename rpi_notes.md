@@ -90,6 +90,21 @@ cd python3 -u -m esptool --port /dev/ttyUSB0 --chip esp32 --baud 115200 write-fl
 10. flash: ```python -m esptool --chip esp32s3 -b 460800 --before default_reset --after hard_reset write_flash --flash_mode dio --flash_size 4MB --flash_freq 80m 0x0 build-ESP32_GENERIC_S3-SPIRAM_OCT/bootloader/bootloader.bin 0x8000 build-ESP32_GENERIC_S3-SPIRAM_OCT/partition_table/partition-table.bin 0x10000 build-ESP32_GENERIC_S3-SPIRAM_OCT/micropython.bin```
 11. enjoy
 
+# Build a specific version of Python from source on Ubuntu (using 8 cores)
+
+``` bash
+#!/bin/bash
+sudo apt update
+sudo apt install wget build-essential libreadline-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev -y 
+
+wget https://www.python.org/ftp/python/3.10.13/Python-3.10.13.tgz
+tar -xvf Python-3.10.13.tgz
+cd Python-3.10.13   
+./configure --enable-optimizations
+make -j8  # use 8 cores
+# grab a coffee and wait
+```
+
 
 # Interesting Projects/Ideas/Examples
 
