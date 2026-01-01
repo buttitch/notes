@@ -95,13 +95,15 @@ cd python3 -u -m esptool --port /dev/ttyUSB0 --chip esp32 --baud 115200 write-fl
 ``` bash
 #!/bin/bash
 sudo apt update
-sudo apt install wget build-essential libreadline-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev -y 
+sudo apt install wget build-essential liblzma-dev libreadline-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev -y 
 
+mkdir -p python
+cd python
 wget https://www.python.org/ftp/python/3.10.13/Python-3.10.13.tgz
 tar -xvf Python-3.10.13.tgz
 cd Python-3.10.13   
-./configure --enable-optimizations
-make -j8  # use 8 cores
+./configure --enable-optimizations --with-ensurepip=install
+make -j8  # use all cores
 # grab a coffee and wait
 ```
 
