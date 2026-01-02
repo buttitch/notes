@@ -131,3 +131,6 @@ Detailed CYD tutorial:
 
 esp32 streaming display:
 * tuckershannon/ESP32-Desktop-Monitor https://share.google/4mGBPtKFK0VUNKA4O
+
+Detailed claude guide:
+* https://www.reddit.com/r/ClaudeAI/s/3IAl8P0S2A
